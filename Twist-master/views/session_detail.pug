@@ -1,0 +1,15 @@
+
+extends layout
+
+block content
+  
+  h1 #{session.SessionNum}
+  h3 PresenterID: #{session.PresenterID}
+  h3 Time: #{session.Time}
+  
+  div(style='margin-left:20px;margin-top:20px')
+    p
+     a(href=session.url+'/delete') Delete Session
+    p
+     a(href=session.url+'/update') Update Session
+

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 #{title}: #{participant.name}
+ 
+    form(method='POST' action='')
+      div.form-group
+        input#participantid.form-control(type='hidden',name='id', required='true', value=participant._id )
+
+      button.btn.btn-primary(type='submit') Delete

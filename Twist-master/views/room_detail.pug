@@ -1,0 +1,14 @@
+
+extends layout
+
+block content
+  
+  h1 #{room.RoomNumber}
+  h3 Capacity: #{room.Capacity}
+  h3 Building: #{room.Building}
+  
+  div(style='margin-left:20px;margin-top:20px')
+    p
+     a(href=room.url+'/delete') Delete Room
+    p
+     a(href=room.url+'/update') Update Room

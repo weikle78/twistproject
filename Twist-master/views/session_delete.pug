@@ -1,0 +1,18 @@
+
+extends layout
+
+block content
+  h1 #{title}: #{session.SessionNum}
+  h3 Capacity: #{session.ParticipantID}
+  h3 Building: #{session.Time}
+  
+    div(style='margin-left:20px;margin-top:20px')
+
+    p Do you really want to delete this Session?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#SessionNum.form-control(type='hidden',name='SessionNum', required='true', value=session._id )
+
+      button.btn.btn-primary(type='submit') Delete
+

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='RoomNumber') Room Number:
+      input#name.form-control(type='text', placeholder='Enter the Room Number' name='RoomNumber' value=(undefined===Room ? '' : room.RoomNumber))
+    div.form-group
+      label(for='Building') Bulding:
+      input#name.form-control(type='text', placeholder='Enter the Building' name='Building' value=(undefined===Room ? '' : room.Building))
+    div.form-group
+      label(for='Capacity') Capacity:
+      input#name.form-control(type='text', placeholder='Enter the Room Capacity' name='Capacity' value=(undefined===Room ? '' : room.Capacity))
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

@@ -1,0 +1,23 @@
+
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='SessionNum') Session:
+      input#name.form-control(type='text', placeholder='Session' name='SessionNum' value=(undefined===session ? '' : session.SessionNum))
+    div.form-group
+      label(for='PresenterID') PresenterID:
+      input#name.form-control(type='text', placeholder='Presenter' name='PresenterID' value=(undefined===session ? '' : session.PresenterID))
+    div.form-group
+      label(for='Time') Time:
+      input#name.form_control(type='text', placeholder='Time' name='Time' value=(undefined===session ? '' : session.Time))
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
+

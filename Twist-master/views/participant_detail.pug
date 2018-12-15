@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 #{participant.name}
+  h3 Email: #{participant.Email}
+  h3 Address:#{participant.Address}
+  
+  div(style='margin-left:20px;margin-top:20px')
+    p
+     a(href=participant.url+'/delete') Delete Participant
+    p
+     a(href=participant.url+'/update') Update Participant

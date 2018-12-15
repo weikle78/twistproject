@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+ h1 School: #{school.HSName}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h1 Participants
+    
+    dl
+    each participant in school_participants
+      dt 
+        a(href=participant.url) #{participant.name}
+
+    else
+      p This school has no participants
+    hr
+    p
+     a(href=school.url+'/delete') Delete school
+       p
+     a(href=school.url+'/update') Update school

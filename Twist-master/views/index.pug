@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Welcome to the #{title}
+
+
+  ul
+    li #[strong Participants:] !{participant_count}
+  
+    p Welcome to the #[em Administrator Page], this is where you can access all of your administrative abilities such as adding or deleting data in your collections.
+
+  div(class='col-sm-10')
+  h2 
+    a(href='/admin/participant/create') Enrollment 
+    

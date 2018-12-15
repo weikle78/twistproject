@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 #{title}: #{school.HSName}
+  
+  if school_participants.length
+  
+    p #[strong Delete the following participants before attempting to delete this school.]
+  
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Participants
+    
+      dl
+      each participant in school_participants
+        hr
+        p.text-success #{participant.name}
+  else
+    p Do you really want to delete this School?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#HSID.form-control(type='hidden',name='HSID', required='true', value=school._id )
+
+      button.btn.btn-primary(type='submit') Delete

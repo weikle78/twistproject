@@ -1,0 +1,18 @@
+
+extends layout
+
+block content
+  h1 #{title}: #{room.RoomNumber}
+  h3 Capacity: #{room.Capacity}
+  h3 Building: #{room.Building}
+  
+    div(style='margin-left:20px;margin-top:20px')
+
+    p Do you really want to delete this Room?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#RoomNumber.form-control(type='hidden',name='RoomNumber', required='true', value=room._id )
+
+      button.btn.btn-primary(type='submit') Delete
+

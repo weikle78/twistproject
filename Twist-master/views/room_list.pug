@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each room in room_list
+      li 
+        a(href=room.url) #{room.RoomNumber} 
+        |  #{room.Building}
+        |  #{room.Capacity}
+
+    else
+       There are no rooms.

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='FirstName') First Name:
+      input#name.form-control(type='text', placeholder='Enter your first name' name='FirstName' value=(undefined===participant ? '' : participant.FirstName))
+    div.form-group
+      label(for='LastName') Last Name:
+      input#name.form-control(type='text', placeholder='Enter your last name' name='LastName' value=(undefined===participant ? '' : participant.LastName))
+    div.form-group
+      label(for='Email') Email Address:
+      input#name.form-control(type='text', placeholder='Enter your email address' name='Email' value=(undefined===participant ? '' : participant.Email))
+    div.form-group
+      label(for='Address') Street Address:
+      input#name.form-control(type='text', placeholder='Enter your address' name='Address' value=(undefined===participant ? '' : participant.Address))
+    div.form-group
+      label(for='ParticipantType') Participant Type:
+      input#name.form-control(type='text', placeholder='Occupation' name='ParticipantType' value=(undefined===participant ? '' : participant.ParticipantType))
+    div.form-group
+      label School:
+      div
+        for school in school_list
+          div(style='display: inline; padding-right:10px;')
+            if selected_school == school._id
+              input.checkbox-input(type='checkbox', name='School', id=school._id, value=school._id, checked=checked)
+            else  
+              input.checkbox-input(type='checkbox', name='School', id=school._id, value=school._id)
+            label(for=school._id) #{school.HSName}
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
